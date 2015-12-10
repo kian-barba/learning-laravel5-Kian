@@ -14,6 +14,7 @@ class ArticlesController extends Controller
 {
     public function index()
     {
+        //return \Auth::user()->username;
         //return 'get all articles';
         //$articles = Article::all();
         //$articles = Article::latest('published_at')->get();
@@ -61,7 +62,9 @@ class ArticlesController extends Controller
 
         //Article::create($input);
         //Article::create(Request::all());
-        Article::create($request->all());
+        //Article::create($request->all());
+        $article = new Article($request->all());
+        \Auth::user()->articles()->save($article);
         //return Article::all();
         return redirect('articles');
 
