@@ -50,4 +50,9 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 Route::get('password/email', 'Auth\PasswordController@getEmail');
 Route::post('password/email', 'Auth\PasswordController@postEmail');
 
+Route::get('foo', ['middleware' => 'manager', function()
+{
+    return 'this page may only be viewed by managers';
+}]);
+
 ?>

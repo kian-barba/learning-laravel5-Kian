@@ -12,6 +12,18 @@ use Carbon\Carbon;
 
 class ArticlesController extends Controller
 {
+    /**
+     *
+     */
+    public function __construct()
+    {
+        //$this->middleware('auth', ['only' => 'create']);
+        $this->middleware('auth', ['except' => 'index']);
+    }
+
+    /**
+     * @return \Illuminate\View\View
+     */
     public function index()
     {
         //return \Auth::user()->username;
