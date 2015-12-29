@@ -1,5 +1,8 @@
 @extends('app')
 
+{{--Pantalla para que te envien el link de reseteo de password--}}
+{{--URL: http://localhost:8888/password/email--}}
+
 @section('content')
     <div class="container-fluid">
         <div class="row">

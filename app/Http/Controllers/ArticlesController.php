@@ -38,7 +38,8 @@ class ArticlesController extends Controller
         //return view('articles.index')->with('articles',$articles);
     }
 
-    public function show($id)
+    //public function show($id)
+    public function show(Article $article)
     {
         //return $id;
         //$article = Article::find($id);
@@ -46,7 +47,7 @@ class ArticlesController extends Controller
         /*if (is_null($article)) {
             abort(404);
         }*/
-        $article = Article::findOrFail($id);
+        //$article = Article::findOrFail($id);
         //dd($article->published_at);
         //dd($article->created_at);
         return view('articles.show', compact('article'));
@@ -96,9 +97,10 @@ class ArticlesController extends Controller
         return redirect('articles');
     }*/
 
-    public function edit($id)
+    //public function edit($id)
+    public function edit(Article $article)
     {
-        $article = Article::findOrFail($id);
+        //$article = Article::findOrFail($id);
         return view('articles.edit',compact('article'));
     }
 
@@ -109,9 +111,10 @@ class ArticlesController extends Controller
         return redirect('articles');
     }*/
 
-    public  function update($id, \App\Http\Requests\ArticleRequest $request)
+    //public  function update($id, \App\Http\Requests\ArticleRequest $request)
+    public  function update(Article $article, \App\Http\Requests\ArticleRequest $request)
     {
-        $article = Article::findOrFail($id);
+        //$article = Article::findOrFail($id);
         $article->update($request->all());
         return redirect('articles');
     }

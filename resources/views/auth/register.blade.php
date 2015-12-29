@@ -1,5 +1,8 @@
 @extends('app')
 
+{{--SignUp Page--}}
+{{--URL: http://localhost:8888/auth/register--}}
+
 @section('content')
     <div class="container-fluid">
         <div class="row">
